@@ -12,6 +12,9 @@ public class PersonController {
     @Autowired
     private PersonRepository personRepository;
 
+    @Autowired
+    private PersonService personService;
+
     /**
      * 查询所有员工信息
      * @return
@@ -77,10 +80,21 @@ public class PersonController {
         return "Delete Success";
     }
 
+    /**
+     * 按年龄查询
+     * @param age
+     * @return
+     */
     @GetMapping(value = "/person/age/{age}")
     public List<Person> personListByAge(@PathVariable("age")String age){
         return personRepository.findByAge(age);
     }
+
+    @PostMapping(value = "/person/two")
+    public void personTwo(){
+        personService.insertTwo();
+    }
+
 
 
 
