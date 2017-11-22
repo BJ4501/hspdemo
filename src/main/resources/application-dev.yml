@@ -1,0 +1,13 @@
+server:
+  port: 8081
+  #context-path: /spring
+
+name: Aa
+age: 18
+#在配置中写当前配置
+content: "name: ${name}, age: ${age}"
+
+#自定义配置方法2
+person:
+  name: Bb
+  age: 20
